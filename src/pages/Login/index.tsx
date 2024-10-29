@@ -17,6 +17,10 @@ const schema = yup
   })
   .required();
 
+  function HandleLogin() {
+    alert('Login feito com sucesso :)')
+  }
+
 const Login = () => {
   const {
     control,
@@ -49,7 +53,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button  disabled={!isValid} title="Entrar" onClick={() => HandleLogin()} />
         </Column>
       </LoginContainer>
     </Container>

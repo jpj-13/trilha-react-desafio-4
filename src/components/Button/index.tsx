@@ -1,8 +1,11 @@
-import { ButtonContainer } from "./styles";
-import { IButtonProps } from "./types";
+import React from 'react';
+import { IButtonProps } from './types';
+import { ButtonContainer } from './styles';
 
-const Button = ({ title, onClick }: IButtonProps) => {
-  return <ButtonContainer onClick={onClick}>{title}</ButtonContainer>;
+const Button = ({ title, onClick, disabled }: IButtonProps) => {
+  return (
+    <ButtonContainer disabled={disabled} onClick={onClick}>{title}</ButtonContainer>
+  );
 };
 
 export default Button;
